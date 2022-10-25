@@ -19,6 +19,21 @@ end
 
 def remove_strawberry(contacts)
   # your code here!
+
+  # first level
+  contacts.each do |person, contact_details_hash|
+    # second level
+    if person == "Freddie Mercury"
+      contact_details_hash.each do |attribute, data|
+        # locate element we are looking for
+        if attribute == :favorite_ice_cream_flavors
+          # loop through array and delete if element matches strawberry
+          data.delete_if {|ice_cream| ice_cream == "strawberry"}
+          binding.pry
+        end
+      end
+    end
+  end 
 end
 
 # print the output to the terminal for inspection
